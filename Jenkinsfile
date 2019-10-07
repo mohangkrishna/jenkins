@@ -3,7 +3,8 @@ node {
    git 'https://github.com/mohangkrishna/jenkins'
  }
  stage ('compile'){
-   sh 'mvn clean install'
+  def mvnHome = tool name: 'm3', type: 'maven'
+  sh "${mvnHome}/bin/mvn package"
  }
 }
  
