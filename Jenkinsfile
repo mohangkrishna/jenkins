@@ -1,4 +1,4 @@
-node {
+node (label: 'slave') {
  stage ('SCM checkout'){
    git 'https://github.com/mohangkrishna/jenkins'
  }
