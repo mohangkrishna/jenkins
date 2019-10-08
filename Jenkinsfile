@@ -7,8 +7,8 @@ node {
   sh "${mvnHome}/bin/mvn package"
  }
  stage ('Deploy') {
-  sh 'ssh -o StrictHostKeyChecking=no root@192.168.0.112 mkdir -p /var/www/temp_deploy'
-  sh 'scp -r /var/lib/jenkins/workspace/sai/target root@192.168.0.112:/var/www/temp_deploy/'
+  sh 'ssh -o StrictHostKeyChecking=no jenkins@192.168.0.112 mkdir -p /var/www/temp_deploy'
+  sh 'scp -r /var/lib/jenkins/workspace/sai/target jenkins@192.168.0.112:/var/www/temp_deploy/'
 }
 }
  
